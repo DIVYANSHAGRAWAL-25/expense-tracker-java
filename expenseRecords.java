@@ -15,13 +15,12 @@ class expenseRecords {
         int i = 1;
         for (expense e : record){
             System.out.println(i++);
-            System.out.println("Expenditure is on ");
+            System.out.print("Object ==> ");
             System.out.println(e.spent_on);
-            System.out.println("Expenditure amt spend ");
+            System.out.print("amount ==> ");
             System.out.println(e.amt);
-            System.out.println("Expenditure is of group ");
+            System.out.print("group / type ==> ");
             System.out.println(e.group);
-            System.out.println("");
             System.out.println("");
         }
     }
@@ -32,5 +31,17 @@ class expenseRecords {
             sum += e.amt;
         }
         return sum;
+    }
+
+    // delete an expense using index
+    void deleteExpense(int i) {
+
+        if (i < 1 || i > record.size()) {
+            System.out.println("Invalid exp number");
+            return;
+        }
+
+        record.remove(i - 1);
+        System.out.println("erased");
     }
 }

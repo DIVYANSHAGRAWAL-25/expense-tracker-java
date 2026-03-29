@@ -10,6 +10,7 @@ public class Main {
             System.out.println("B. show my expense");
             System.out.println("C. my total expenditure");
             System.out.println("D. done? if yes please press D");
+            System.out.println("E. delete an unwanted expense?");
             System.out.println("\n");
             System.out.print("click A or B or C or D in capital only ");
             System.out.println("\n");
@@ -51,6 +52,13 @@ public class Main {
                     System.out.println("recorded, thank you ");
                     System.out.print("-");
                     System.exit(0);
+                case 'E':
+                    System.out.print("which expense you want to delete (Give number): ");
+                    int i = sc.nextInt();
+                    sc.nextLine();
+
+                    myRecord.deleteExpense(i);
+                    break;
                 default:
                     System.out.print("\n");
                     System.out.println("try again");
